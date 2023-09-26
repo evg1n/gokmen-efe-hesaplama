@@ -4,49 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gökmen Efe'nin Hesap Makinesi</title>
-    
+
     <!-- Add Ant Design CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.12/antd.min.css">
-</head>
-<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
 
-    <div style="text-align: center;">
+    <style>
+        /* CSS for the background image */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://plus.unsplash.com/premium_photo-1676422355992-703feab0d80d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3790&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the background behind other content */
+        }
+
+        /* Styles for the content */
+        .content {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
         <h1>Gökmen Efe'nin Hesap Makinesi</h1>
         
-        <div role="group" aria-label="Hesap Makinesi İşlemleri">
-            <label for="number1">
-                <span aria-hidden="true">Birinci sayıyı girin:</span>
-                <input type="number" id="number1" placeholder="Birinci sayıyı girin" aria-label="Birinci sayıyı girin" style="margin-right: 10px;">
-            </label>
+        <!-- Calculator content here -->
+        <div style="text-align: center;">
+            <input type="number" id="number1" placeholder="Birinci sayıyı girin" aria-label="Birinci sayıyı girin" style="margin-right: 10px;">
             
-            <label for="operator">
-                <select id="operator" aria-label="Operatörü seçin" style="margin: 0 10px;">
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                    <option value="*">*</option>
-                    <option value="/">/</option>
-                </select>
-            </label>
+            <select id="operator" aria-label="Operatörü seçin" style="margin: 0 10px;">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
             
-            <label for="number2">
-                <span aria-hidden="true">İkinci sayıyı girin:</span>
-                <input type="number" id="number2" placeholder="İkinci sayıyı girin" aria-label="İkinci sayıyı girin" style="margin-right: 10px;">
-            </label>
+            <input type="number" id="number2" placeholder="İkinci sayıyı girin" aria-label="İkinci sayıyı girin" style="margin-right: 10px;">
             
             <button id="calculateButton" class="ant-btn ant-btn-primary" aria-label="Hesapla">Hesapla</button>
-        </div>
-        
-        <div id="result" style="margin-top: 20px; font-size: 24px;"></div>
-        
-        <p style="margin-top: 20px;">
-            Kullanım Kılavuzu:
-        </p>
+            
+            <div id="result" style="margin-top: 20px; font-size: 24px;"></div>
+            
+            <p style="margin-top: 20px;">
+                Kullanım Kılavuzu:
+            </p>
             <p>1. Birinci sayıyı girin.</p>
             <p>2. Operatörü seçin (+, -, *, /).</p>
             <p>3. İkinci sayıyı girin.</p>
             <p>4. "Hesapla" düğmesine tıklayın.</p>
             <p>5. Sonucu görüntüleyin.</p>
-      
+        </div>
     </div>
 
     <!-- Add Ant Design JS and React libraries (you may need to host these locally) -->
@@ -55,34 +71,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.12/antd.min.js"></script>
 
     <script>
-        document.getElementById("calculateButton").addEventListener("click", function() {
-            // Input değerlerini alın
-            const num1 = parseFloat(document.getElementById("number1").value);
-            const num2 = parseFloat(document.getElementById("number2").value);
-            const operator = document.getElementById("operator").value;
-            
-            // Seçilen operatöre göre hesaplama yapın
-            let result;
-            switch (operator) {
-                case "+":
-                    result = num1 + num2;
-                    break;
-                case "-":
-                    result = num1 - num2;
-                    break;
-                case "*":
-                    result = num1 * num2;
-                    break;
-                case "/":
-                    result = num1 / num2;
-                    break;
-                default:
-                    result = "Geçersiz operatör";
-            }
-            
-            // Sonucu göster
-            document.getElementById("result").textContent = `Sonuç: ${result}`;
-        });
+        // Your JavaScript code here
     </script>
 </body>
 </html>
