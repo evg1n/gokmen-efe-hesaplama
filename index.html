@@ -46,6 +46,18 @@
         .usage-guide p {
             margin: 5px 0;
         }
+        
+        .box {
+            border: 1px solid red;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 1em;
+            padding: 1em;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:auto;
+            margin-bottom: auto;
+        }
     </style>
 </head>
 <body>
@@ -53,7 +65,7 @@
         <h1>Gökmen Efe'nin Hesap Makinesi</h1>
         
         <!-- Calculator content here -->
-        <div style="text-align: center;">
+        <div class="box" style="text-align: center;">
             <input type="number" id="number1" placeholder="Birinci sayıyı girin" style="margin-right: 10px;">
             
             <select id="operator" aria-label="Operatörü seçin" style="margin: 0 10px;">
