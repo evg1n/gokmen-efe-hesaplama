@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gökmen Efe'nin Hesap Makinesi</title>
+    
+    <!-- Add Ant Design CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.12/antd.min.css">
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+    <div style="text-align: center;">
+        <h1>Gökmen Efe'nin Hesap Makinesi</h1>
+        
+        <div role="group" aria-label="Hesap Makinesi İşlemleri">
+            <label for="number1">
+                <span aria-hidden="true">Birinci sayıyı girin:</span>
+                <input type="number" id="number1" placeholder="Birinci sayıyı girin" aria-label="Birinci sayıyı girin" style="margin-right: 10px;">
+            </label>
+            
+            <label for="operator">
+                <select id="operator" aria-label="Operatörü seçin" style="margin: 0 10px;">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+            </label>
+            
+            <label for="number2">
+                <span aria-hidden="true">İkinci sayıyı girin:</span>
+                <input type="number" id="number2" placeholder="İkinci sayıyı girin" aria-label="İkinci sayıyı girin" style="margin-right: 10px;">
+            </label>
+            
+            <button id="calculateButton" class="ant-btn ant-btn-primary" aria-label="Hesapla">Hesapla</button>
+        </div>
+        
+        <div id="result" style="margin-top: 20px; font-size: 24px;"></div>
+        
+        <p style="margin-top: 20px;">
+            Kullanım Kılavuzu:
+            <br>
+            1. Birinci sayıyı girin.
+            2. Operatörü seçin (+, -, *, /).
+            3. İkinci sayıyı girin.
+            4. "Hesapla" düğmesine tıklayın.
+            5. Sonucu görüntüleyin.
+        </p>
+    </div>
+
+    <!-- Add Ant Design JS and React libraries (you may need to host these locally) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.14.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.14.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.12/antd.min.js"></script>
+
+    <script>
+        document.getElementById("calculateButton").addEventListener("click", function() {
+            // Input değerlerini alın
+            const num1 = parseFloat(document.getElementById("number1").value);
+            const num2 = parseFloat(document.getElementById("number2").value);
+            const operator = document.getElementById("operator").value;
+            
+            // Seçilen operatöre göre hesaplama yapın
+            let result;
+            switch (operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = "Geçersiz operatör";
+            }
+            
+            // Sonucu göster
+            document.getElementById("result").textContent = `Sonuç: ${result}`;
+        });
+    </script>
+</body>
+</html>
