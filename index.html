@@ -29,8 +29,6 @@
             margin: 0 auto; /* Center the content horizontally */
             text-align: center;
             padding: 20px;
-            border-radius: 1em;
-            background: rgba(255, 255, 255, 0.5); /* White with 0.5 opacity */
             color: black; /* Text color */
         }
 
@@ -45,8 +43,10 @@
         }
         
         .box {
+            display: flex;
+            flex-direction: column;
             height: 80vh;
-            border: 1px solid red;
+            border: 1px solid black;
             max-width: 800px;
             width: 100%;
             border-radius: 1em;
@@ -55,6 +55,7 @@
             margin-right: auto;
             margin-top:auto;
             margin-bottom: auto;
+            background: rgba(255, 255, 255, 0.5); /* White with 0.5 opacity */
         }
     </style>
 </head>
@@ -64,6 +65,7 @@
         
         <!-- Calculator content here -->
         <div class="box" style="text-align: center;">
+            <div>
             <input type="number" id="number1" placeholder="Birinci sayıyı girin" style="margin-right: 10px;">
             
             <select id="operator" aria-label="Operatörü seçin" style="margin: 0 10px;">
@@ -74,7 +76,8 @@
             </select>
             
             <input type="number" id="number2" placeholder="İkinci sayıyı girin" style="margin-right: 10px;">
-            
+            </div>
+            <br>
             <button id="calculateButton" class="ant-btn ant-btn-primary" aria-label="Hesapla">Hesapla</button>
             
             <div id="result" style="margin-top: 20px; font-size: 24px;"></div>
