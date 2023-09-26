@@ -25,13 +25,26 @@
             z-index: -1; /* Place the background behind other content */
         }
 
-        /* Styles for the content */
+        /* Styles for the content container */
         .content {
             width: 75%;
             height: 80vh;
+            margin: 0 auto; /* Center the content horizontally */
             text-align: center;
-            color: black;
             padding: 20px;
+            border-radius: 1em;
+            background: rgba(255, 255, 255, 0.5); /* White with 0.5 opacity */
+            color: black; /* Text color */
+        }
+
+        /* Styles for the usage guide */
+        .usage-guide {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .usage-guide p {
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -56,14 +69,14 @@
             
             <div id="result" style="margin-top: 20px; font-size: 24px;"></div>
             
-            <p style="margin-top: 20px;">
-                Kullanım Kılavuzu:
-            </p>
-            <p>1. Birinci sayıyı girin.</p>
-            <p>2. Operatörü seçin (+, -, *, /).</p>
-            <p>3. İkinci sayıyı girin.</p>
-            <p>4. "Hesapla" düğmesine tıklayın.</p>
-            <p>5. Sonucu görüntüleyin.</p>
+            <div class="usage-guide">
+                <p>Kullanım Kılavuzu:</p>
+                <p>1. Birinci sayıyı girin.</p>
+                <p>2. Operatörü seçin (+, -, *, /).</p>
+                <p>3. İkinci sayıyı girin.</p>
+                <p>4. "Hesapla" düğmesine tıklayın.</p>
+                <p>5. Sonucu görüntüleyin.</p>
+            </div>
         </div>
     </div>
 
